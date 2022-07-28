@@ -28,12 +28,14 @@ func processTarget(source string) string {
 	res = strings.Split(res, "#")[0]
 	res = strings.TrimSpace(res)
 	res = UnicodeSanitize(res)
+	res = strings.ToLower(res)
 	return strings.ReplaceAll(url.PathEscape(res), "%2F", "/")
 }
 
 func processSource(source string) string {
 	res := filepath.ToSlash(hugoPathTrim(source))
 	res = UnicodeSanitize(res)
+	res = strings.ToLower(res)
 	return strings.ReplaceAll(url.PathEscape(res), "%2F", "/")
 }
 

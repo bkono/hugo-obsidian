@@ -3,9 +3,10 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
 	"io/ioutil"
 	"strings"
+
+	"github.com/PuerkitoBio/goquery"
 )
 
 // parse single file for links
