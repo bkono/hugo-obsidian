@@ -3,9 +3,10 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
 	"io/ioutil"
 	"strings"
+
+	"github.com/PuerkitoBio/goquery"
 )
 
 // parse single file for links
@@ -39,8 +40,8 @@ func parse(dir, pathPrefix string) []Link {
 
 		// fmt.Printf("  '%s' => %s\n", source, target)
 		links = append(links, Link{
-			Source: source,
-			Target: target,
+			Source: strings.ToLower(source),
+			Target: strings.ToLower(target),
 			Text:   text,
 		})
 		n++
